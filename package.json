@@ -30,7 +30,14 @@
   "files": [
     "index.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "clean",
+    "stack",
+    "trace",
+    "traces",
+    "error",
+    "err"
+  ],
   "verb": {
     "run": true,
     "toc": true,
