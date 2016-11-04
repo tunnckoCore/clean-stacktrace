@@ -36,7 +36,7 @@ test('default #2', function (done) {
     '    at Function.Module.runMain (module.js:441:10)',
     '    at startup (node.js:139:18)'
   ].join('\n')
-  test.strictEqual(clean(stack), pre)
+  test.ok(clean(stack) === pre, 'should be equal')
 })
 
 test('directly executed node script', function (done) {
@@ -51,19 +51,20 @@ test('directly executed node script', function (done) {
     '    at startup (node.js:139:18)',
     '    at node.js:968:3'
   ].join('\n')
-  test.strictEqual(clean(stack), pre)
+  var actual = clean(stack)
+  var expected = pre
+  test.strictEqual(actual, expected)
   done()
 })
 
 test('internal child_process', function (done) {
   var pre = 'Error: foo\n    at Object.<anonymous> (/Users/sindresorhus/dev/clean-stack/unicorn.js:4:7)'
-  var stack = [
+  test.strictEqual(clean([
     pre,
     '    at Module._compile (module.js:409:26)',
     '    at Object.Module._extensions..js (module.js:416:10)',
     '    at internal/child_process.js:696:12'
-  ].join('\n')
-  test.strictEqual(clean(stack), pre)
+  ].join('\n')), pre)
   done()
 })
 
@@ -80,13 +81,13 @@ test('babel-polyfill', function (done) {
 
 test('work on Windows', function (done) {
   var expected = 'Error: foo\n    at Test.fn (/Users/sindresorhus/dev/clean-stack/test.js:6:15)'
-  var stack = [
+  var parts = [
     'Error: foo',
     '    at Test.fn (\\Users\\sindresorhus\\dev\\clean-stack\\test.js:6:15)',
     '    at handleMessage (internal\\child_process.js:695:10)',
     '    at Pipe.channel.onread (internal\\child_process.js:440:11)',
     '    at process.emit (events.js:172:7)'
-  ].join('\n')
-  test.strictEqual(clean(stack), expected)
+  ]
+  test.ok(clean(parts.join('\n')), expected)
   done()
 })
