@@ -1,6 +1,6 @@
 {
   "name": "clean-stacktrace",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Clean up error stack traces - just a fork of [clean-stack][]. Working on node.js v0.10 and above.",
   "repository": "tunnckoCore/clean-stacktrace",
   "author": "Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)",
