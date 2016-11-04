@@ -4,6 +4,12 @@
 
 [![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
 
+## Just a fork of [clean-stack][]
+
+Just switched some bytes to make it work in node.js v0.10. That's why i hate that rush. In some cases it make sense to be ES2015/2016 and etc; and in some not make sense.
+
+Even more for packages like this one.
+
 ## Install
 > Install with [npm](https://www.npmjs.com/)
 
@@ -104,3 +110,4 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [new-message-url]: https://github.com/tunnckoCore/ama
 [new-message-img]: https://img.shields.io/badge/ask%20me-anything-green.svg
 
+[clean-stack]: https://github.com/sindresorhus/clean-stack
