@@ -1,6 +1,6 @@
 # [clean-stacktrace][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] [![npm downloads][downloads-img]][downloads-url] 
 
-> Clean up error stack traces - just a fork. Working on node.js v0.10 and above.
+> Clean up error stack traces - just a fork of [clean-stack][]. Working on node.js v0.10 and above.
 
 [![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
 
@@ -56,6 +56,13 @@ console.log(cleanStack(error.stack))
 // Error: Missing unicorn
 //     at Object.<anonymous> (/Users/sindresorhus/dev/clean-stack/unicorn.js:2:15)
 ```
+
+## Related
+- [clean-stack](https://www.npmjs.com/package/clean-stack): Clean up error stack traces | [homepage](https://github.com/sindresorhus/clean-stack#readme "Clean up error stack traces")
+- [error-base](https://www.npmjs.com/package/error-base): Create custom Error classes. | [homepage](https://github.com/doowb/error-base "Create custom Error classes.")
+- [error-format](https://www.npmjs.com/package/error-format): Allows you to customize the toString method of passed `err`. Also adds… [more](https://github.com/tunnckocore/error-format#readme) | [homepage](https://github.com/tunnckocore/error-format#readme "Allows you to customize the toString method of passed `err`. Also adds useful properties like `line`, `filename` and `column` to the `err` object.")
+- [stack-utils](https://www.npmjs.com/package/stack-utils): Captures and cleans stack traces | [homepage](https://github.com/tapjs/stack-utils#readme "Captures and cleans stack traces")
+- [stacktrace-metadata](https://www.npmjs.com/package/stacktrace-metadata): Modify given `err` object to be more useful. Adds `line`, `column` and… [more](https://github.com/tunnckocore/stacktrace-metadata#readme) | [homepage](https://github.com/tunnckocore/stacktrace-metadata#readme "Modify given `err` object to be more useful. Adds `line`, `column` and `filename` properties.")
 
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/clean-stacktrace/issues/new).  
