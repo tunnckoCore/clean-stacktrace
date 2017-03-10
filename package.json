@@ -1,31 +1,36 @@
 {
   "name": "clean-stacktrace",
   "version": "1.0.0",
-  "description": "Clean up error stack traces - just a fork of [clean-stack][]. Working on node.js v0.10 and above.",
+  "description": "Clean up error stack traces from node internals",
   "repository": "tunnckoCore/clean-stacktrace",
-  "author": "Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
   "precommit.silent": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "standard --verbose",
-    "pretest": "npm run lint",
-    "test": "npm run coverage",
-    "posttest": "npm run lint:coverage",
-    "coverage": "nyc node test.js",
-    "lint:coverage": "nyc check-coverage --lines 100 --branches 100 --statements 100 --functions 100",
-    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard index.js test.js --fix --verbose",
+    "test": "npm-run-all -s lint test:*",
+    "test:api": "nyc --reporter lcov node test.js",
+    "test:report": "nyc report",
     "prerelease": "npm test",
-    "release": "standard-version --sign --no-verify"
+    "release": "standard-version --sign --no-verify",
+    "git": "npm-run-all -s git:*",
+    "git:add": "git add --all",
+    "git:cz": "git-cz",
+    "commit": "npm-run-all -s test git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "stack-utils-node-internals": "^1.0.1"
+  },
   "devDependencies": {
-    "coveralls": "^2.11.14",
-    "mukla": "0.4.8",
-    "nyc": "^10.1.0",
-    "pre-commit": "^1.1.3",
-    "standard": "^8.5.0",
-    "standard-version": "^3.0.0"
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "mukla": "^0.4.8",
+    "npm-run-all": "^4.0.1",
+    "nyc": "^10.1.2",
+    "pre-commit": "^1.2.2",
+    "standard": "^9.0.0",
+    "standard-version": "^4.0.0"
   },
   "files": [
     "index.js"
@@ -38,24 +43,39 @@
     "error",
     "err"
   ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "verb": {
     "run": true,
-    "toc": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3
+    },
     "layout": "empty",
     "tasks": [
       "readme"
     ],
     "related": {
       "list": [
-        "clean-stack",
-        "stack-utils",
-        "stacktrace-metadata",
-        "error-base",
-        "error-format"
-      ]
+        "always-done",
+        "minibase",
+        "try-catch-core"
+      ],
+      "highlight": "stack-utils"
     },
     "lint": {
       "reflinks": true
     }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "lines": 100
   }
 }
