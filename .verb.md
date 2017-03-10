@@ -1,13 +1,14 @@
-# {%= name %} {%= badge('npm') %} {%= badge('downloads') %} [![npm total downloads][downloads-img]][downloads-url]
+# {%= name %} {%= badge('npm') %} [![mit license][license-img]][license-url] {%= badge('downloads') %} [![npm total downloads][downloads-img]][downloads-url]
 
 > {%= description %}
 
-[![codeclimate][codeclimate-img]][codeclimate-url] 
-[![codestyle][standard-img]][standard-url] 
+[![code climate][codeclimate-img]][codeclimate-url] 
+[![code style][standard-img]][standard-url] 
 [![linux build][travis-img]][travis-url] 
 [![windows build][appveyor-img]][appveyor-url] 
-[![codecov][coverage-img]][coverage-url] 
+[![code coverage][coverage-img]][coverage-url] 
 [![dependency status][david-img]][david-url]
+[![paypal donate][paypalme-img]][paypalme-url] 
 
 {%= include('highlight') %}
 
@@ -86,6 +87,9 @@ _Project scaffolded using [charlike][] cli._
 
 {%= reflinks(verb.reflinks) %}
 
+[license-url]: https://www.npmjs.com/package/{%= name %}
+[license-img]: https://img.shields.io/npm/l/{%= name %}.svg
+
 [downloads-url]: https://www.npmjs.com/package/{%= name %}
 [downloads-img]: https://img.shields.io/npm/dt/{%= name %}.svg
 
@@ -106,3 +110,6 @@ _Project scaffolded using [charlike][] cli._
 
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+
+[paypalme-url]: https://www.paypal.me/tunnckoCore
+[paypalme-img]: https://img.shields.io/badge/paypal-donate-brightgreen.svg

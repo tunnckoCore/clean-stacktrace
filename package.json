@@ -37,11 +37,11 @@
   ],
   "keywords": [
     "clean",
+    "err",
+    "error",
     "stack",
     "trace",
-    "traces",
-    "error",
-    "err"
+    "traces"
   ],
   "config": {
     "commitizen": {
@@ -69,7 +69,19 @@
     },
     "lint": {
       "reflinks": true
-    }
+    },
+    "reflinks": [
+      "always-done",
+      "async-done",
+      "base",
+      "charlike",
+      "commitizen",
+      "dezalgo",
+      "once",
+      "standard-version",
+      "verb",
+      "verb-generate-readme"
+    ]
   },
   "nyc": {
     "check-coverage": true,
